@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVation Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo.png" alt="EduVation Logo">
+                <span>EduVation</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/html/about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="/html/event.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Event</a></li>
+                <li><a href="#" class="login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-toggle-icon"></i>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-item active">
+                <div class="carousel-text animate__animated animate__fadeInLeft">
+                    <span class="tag">Welcome</span>
+                    <h1>Selamat Datang!</h1>
+                    <p>Gabung di Business Incubator Satya Terra Bhinneka University dan ubah ide kreatifmu menjadi peluang bisnis nyata!</p>
+                    <a href="#" class="cta-button">Mulai Sekarang <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="carousel-image">
+                    <img src="img/s1.jpg" alt="Business Incubator">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <span class="tag">Growth</span>
+                    <h1>Berkembang Bersama</h1>
+                    <p>Kami membantumu mengembangkan bisnis dengan mentoring dan dukungan dari para ahli.</p>
+                    <a href="#" class="cta-button">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="carousel-image">
+                    <img src="img/IMG-20241212-WA0035.jpg" alt="Mentoring">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <span class="tag">Community</span>
+                    <h1>Jadilah Bagian dari Kami</h1>
+                    <p>Wujudkan startup impianmu dan jadilah pengusaha sukses bersama komunitas kami.</p>
+                    <a href="#" class="cta-button">Bergabung <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="carousel-image">
+                    <img src="img/Community-1.jpg" alt="Startup Community">
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-nav">
+                <div class="carousel-dot active" aria-label="Slide 1"></div>
+                <div class="carousel-dot" aria-label="Slide 2"></div>
+                <div class="carousel-dot" aria-label="Slide 3"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <p>inkubatorbisnis@satyaterrabhinneka.ac.id</p>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Theme toggle script
+        const themeToggleIcon = document.getElementById("theme-toggle-icon");
+        const body = document.body;
+
+        // Check if dark mode is already set in localStorage
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-theme");
+            themeToggleIcon.classList.replace("fa-moon", "fa-sun");
+        }
+
+        themeToggleIcon.addEventListener("click", () => {
+            body.classList.toggle("dark-theme");
+            if (body.classList.contains("dark-theme")) {
+                themeToggleIcon.classList.replace("fa-moon", "fa-sun");
+                localStorage.setItem("theme", "dark");
+            } else {
+                themeToggleIcon.classList.replace("fa-sun", "fa-moon");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+</body>
+
+</html>

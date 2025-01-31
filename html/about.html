@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tentang EduVation - Platform Pembelajaran dan Pengembangan Pendidikan">
+    <meta name="theme-color" content="#0a192f"> <!-- Menambahkan theme color untuk mobile -->
+    <title>Tentang Kami | EduVation</title>
+    <link rel="stylesheet" href="/css/about.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a192f;
+            color: #ccd6f6;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #112240;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            color: #64ffda;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #ccd6f6;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #64ffda;
+        }
+
+        .nav-link.active {
+            color: #64ffda;
+        }
+
+        .theme-toggle, .menu-toggle {
+            color: #ccd6f6;
+            cursor: pointer;
+        }
+
+        .about {
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            color: #64ffda;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .video-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(100, 255, 218, 0.5);
+        }
+
+        .activities {
+            margin-top: 40px;
+        }
+
+        .activity {
+            margin-bottom: 40px;
+        }
+
+        .activity h3 {
+            color: #64ffda;
+            margin-bottom: 10px;
+        }
+
+        .activity p {
+            margin-bottom: 20px;
+        }
+
+        .activity-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .activity-images img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .activity-images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(100, 255, 218, 0.5);
+        }
+
+        footer {
+            background-color: #112240;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            color: #ccd6f6;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #64ffda;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hover-effect {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="img/logo.png" alt="EduVation Logo">
+            <span>EduVation</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html" class="nav-link active"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="event.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Event</a></li>
+            <li><a href="login.html" class="login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <i class="fas fa-moon" id="theme-toggle-icon"></i>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h1 class="fade-in">About EduVation</h1>
+            <p class="fade-in">EduVation adalah platform pembelajaran dan pengembangan yang didedikasikan untuk meningkatkan kualitas pendidikan di Indonesia. Kami menawarkan berbagai sumber daya yang dapat membantu para pelajar dan pendidik dalam mengakses informasi berkualitas dan meningkatkan keterampilan mereka.</p>
+            
+            <h2 class="fade-in">Visi Kami</h2>
+            <p class="fade-in">Visi kami adalah untuk menciptakan perubahan positif dalam dunia pendidikan dengan menyediakan akses ke sumber daya pembelajaran yang mudah diakses oleh siapa saja, kapan saja, dan di mana saja.</p>
+
+            <h2 class="fade-in">Misi Kami</h2>
+            <ul class="fade-in">
+                <li>Mengembangkan platform pembelajaran yang mudah diakses oleh semua kalangan.</li>
+                <li>Menyediakan kursus dan pelatihan yang dapat membantu pengembangan keterampilan praktis dan teoretis.</li>
+                <li>Berkolaborasi dengan berbagai institusi pendidikan untuk menciptakan program pendidikan yang relevan dan berkualitas.</li>
+            </ul>
+
+            <h2 class="fade-in">Tim Kami</h2>
+            <p class="fade-in">EduVation dibangun oleh tim profesional yang berdedikasi untuk mendorong perubahan positif dalam dunia pendidikan. Tim kami terdiri dari pendidik, pengembang teknologi, dan profesional di bidang pendidikan yang memiliki visi yang sama dalam memberikan kesempatan yang lebih baik bagi masa depan pendidikan.</p>
+
+            <!-- Video Section -->
+            <div class="video-container fade-in">
+                <h2>Video Profil EduVation</h2>
+                <iframe src="video/1122.mp4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- Gallery Section -->
+            <div class="gallery fade-in">
+                <h2>Galeri Kami</h2>
+                <img src="img/IMG-20241212-WA0035.jpg" alt="Photo 1" class="hover-effect">
+                <img src="img/Community-1.jpg" alt="Photo 2" class="hover-effect">
+                <img src="img/IMG-20241212-WA0035.jpg" alt="Photo 3" class="hover-effect">
+                <img src="img/IMG-20241212-WA0035.jpg" alt="Photo 4" class="hover-effect">
+            </div>
+
+            <!-- Activities Section -->
+            <div class="activities fade-in">
+                <h2>Kegiatan Kami</h2>
+
+                <!-- WMK Section -->
+                <div class="activity">
+                    <h3>WirausahaMerdeka (WMK)</h3>
+                    <p>Kami mendukung pengembangan Wirausaha Mikro Kecil (WMK) melalui program pelatihan dan pendampingan. Berikut adalah beberapa kegiatan WMK yang telah kami lakukan:</p>
+                    <div class="activity-images">
+                        <img src="img/IMG-20241212-WA0035.jpg" alt="WMK 1" class="hover-effect">
+                        <img src="img/IMG-20241212-WA0035.jpg" alt="WMK 2" class="hover-effect">
+                        <img src="img/wmk3.jpg" alt="WMK 3" class="hover-effect">
+                    </div>
+                </div>
+
+                <!-- UMKM Section -->
+                <div class="activity">
+                    <h3>Usaha Mikro, Kecil, dan Menengah (UMKM)</h3>
+                    <p>Kami juga aktif dalam mendukung UMKM melalui berbagai program pemberdayaan dan pelatihan. Berikut adalah beberapa kegiatan UMKM yang telah kami lakukan:</p>
+                    <div class="activity-images">
+                        <img src="img/IMG-20241212-WA0035.jpg" alt="UMKM 1" class="hover-effect">
+                        <img src="img/IMG-20241212-WA0035.jpg" alt="UMKM 2" class="hover-effect">
+                        <img src="img/umkm3.jpg" alt="UMKM 3" class="hover-effect">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 EduVation. Semua Hak Cipta Dilindungi.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

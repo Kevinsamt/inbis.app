@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #00e676;
+    --secondary-color: #00b8d4;
+    --bg-dark: #1a1a2e;
+    --bg-darker: #16213e;
+    --text-light: #ffffff;
+    --text-gray: #e0e0e0;
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --nav-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Light theme (default) */
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* Dark theme */
+body.dark-theme {
+    color: var(--text-light);
+    background-color: var(--bg-dark);
+}
+
+body.dark-theme a {
+    color: lightblue;
+}
+
+body.dark-theme nav a {
+    color: var(--text-light);
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+body.dark-theme .theme-toggle {
+    color: var(--text-light);
+}
+
+/* Navbar Styles */
+header {
+    background: var(--bg-color);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.dark-theme header {
+    background: var(--bg-dark);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+body.dark-theme .logo span {
+    color: var(--text-light);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+body.dark-theme nav ul li a {
+    color: var(--text-light);
+}
+
+nav ul li a i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+nav ul li a.active {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+nav ul li a:hover i {
+    transform: scale(1.1);
+}
+
+nav .login {
+    background: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+nav .login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 230, 118, 0.4);
+}
+
+a {
+    color: inherit;
+    transition: color 0.3s;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1500;
+    color: var(--text-color);
+}
+
+body.dark-theme .menu-toggle {
+    color: var(--text-light);
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    opacity: 0.3;
+    transition: opacity 0.6s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-text {
+    width: 50%;
+    padding: 40px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.carousel-item.active .carousel-text {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.carousel h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.carousel-image {
+    width: 50%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateX(50px);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.carousel-item.active .carousel-image {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Navigation Dots */
+.carousel-nav {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+footer p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1500;
+    }
+
+    .theme-toggle {
+        position: absolute;
+        top: 15px;
+        right: 50px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background: var(--bg-dark);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none; /* Hidden by default */
+        opacity: 0; /* Make it invisible */
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 100; /* Ensure it appears above other elements */
+    }
+
+    nav ul.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Navbar link adjustments */
+    nav ul li {
+        margin-left: 0; /* Remove left margin for mobile */
+        margin-bottom: 10px; /* Add some space between menu items */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Adjust font size for mobile */
+        color: var(--text-light); /* Ensure text is light in color */
+    }
+
+    /* Carousel */
+    .carousel-item {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .carousel-text, .carousel-image {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .carousel h1 {
+        font-size: 1.8rem; /* Adjust font size for mobile */
+    }
+
+    .carousel p {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+
+    /* Content Section */
+    .carousel, footer {
+        margin-top: 60px; /* Add space between the header and the content */
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+}
